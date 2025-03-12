@@ -28,6 +28,10 @@
             --primary: #F43B22;
             --light-primary: #FFDEDA;
             --light-primary2: #fff9f8;
+            --text-primary: #333;
+            --text-secondary: #777;
+            --text-third: #999;
+            --text-muted: #919191;
         }
 
         body {
@@ -55,6 +59,11 @@
             display: flex;
             justify-content: center; 
             margin: 0;
+            font-size: 15px;
+        }
+
+        .dropdown-item {
+            font-size: 15px;
         }
 
         .navbar-nav .nav-item .nav-link-active {
@@ -74,18 +83,18 @@
 
         .container-fluid img {
             display: block;
-            width: 100%;
-            height: auto; 
+            max-width: 1440px;
+            max-height: 388px; 
             
         }
 
         .text-container{
             position: absolute;
-            top: 40%;
+            top: 37%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: var(--white);
+            color: white;
             z-index: 2;
         }
 
@@ -93,8 +102,8 @@
             font-family: 'Alegreya Sans';
             font-weight: bold !important;
             text-transform: uppercase;
-            font-size: 80px;
-            color: var(--white);
+            font-size: 75px;
+            color: white;
             padding-bottom: 180px;
         }
 
@@ -150,7 +159,7 @@
 
     main {
         padding-top: 5rem;
-        padding-right: 8rem;
+        padding-right: 2rem;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -162,7 +171,7 @@
         max-width: 1800px;
         width: 100%;
         display: flex;
-        gap: 5rem;
+        gap: 3rem;
         align-items: stretch; /* Menyamakn tinggi sidebar dengan konten kanan */
     }
 
@@ -235,7 +244,6 @@
         align-items: stretch; /* Menyamakn tinggi konten kanan dengan sidebar */
         gap: 2rem;
         height: 100%;
-        margin-left: 2rem;
     }
 
     .profile-container {
@@ -269,14 +277,14 @@
     }
     .profile-info h3 {
         margin: 0;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
 
     }
 
     .profile-info .title {
         font-size: 0.9em;
-        color: #888888;
+        color: var(--text-secondary);
         margin: 5px 0;
         padding-left: 10px;
         border-left: 3px solid var(--primary);
@@ -284,8 +292,8 @@
 
     .profile-info p {
         margin: 0;
-        color: #000000;
-        font-size: 20px;
+        color: var(--text-primary);
+        font-size: 16px;
         text-align: justify;
         float: left;
     }
@@ -368,7 +376,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
+                    <div class="navbar-nav ml-auto" style="padding-left: 60px;">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>

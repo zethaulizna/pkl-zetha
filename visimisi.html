@@ -30,6 +30,7 @@
             --light-primary: #FFDEDA;
             --light-primary2: #fff9f8;
         }
+
         body {
             font-family: 'Poppins';
             background-color: var(--white);
@@ -55,6 +56,11 @@
             display: flex;
             justify-content: center; 
             margin: 0;
+            font-size: 15px;
+        }
+
+        .dropdown-item {
+            font-size: 15px;
         }
 
         .navbar-nav .nav-item .nav-link-active {
@@ -74,18 +80,18 @@
 
         .container-fluid img {
             display: block;
-            width: 100%;
-            height: auto; 
+            max-width: 1440px;
+            max-height: 388px; 
             
         }
 
         .text-container{
             position: absolute;
-            top: 40%;
+            top: 37%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: var(--white);
+            color: white;
             z-index: 2;
         }
 
@@ -93,8 +99,8 @@
             font-family: 'Alegreya Sans';
             font-weight: bold !important;
             text-transform: uppercase;
-            font-size: 80px;
-            color: var(--white);
+            font-size: 75px;
+            color: white;
             padding-bottom: 180px;
         }
 
@@ -150,7 +156,7 @@
 
     main {
         padding-top: 5rem;
-        padding-right: 8rem;
+        padding-right: 2rem;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -162,7 +168,7 @@
         max-width: 1800px;
         width: 100%;
         display: flex;
-        gap: 5rem;
+        gap: 3rem;
         align-items: stretch; /* Menyamakn tinggi sidebar dengan konten kanan */
     }
 
@@ -250,12 +256,12 @@
     position: absolute;
     background-color: transparent;
     text-align: center;
-    min-width: 30px;
-    height: 30px;
+    min-width: 25px;
+    height: 25px;
     border-radius: 30px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    padding: 4px 1px 0 0;
+    padding:2px 1px 0 0;
     border: 2px solid var(--primary);
     margin-left: -20px;
     }
@@ -267,7 +273,6 @@
         align-items: stretch; /* Menyamakn tinggi konten kanan dengan sidebar */
         gap: 2rem;
         height: 100%;
-        margin-left: 2rem;
     }
 
     .text-content {
@@ -275,14 +280,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* Menyebarkan konten teks untuk tinggi penuh */
-        font-size: 20px;
+        font-size: 16px;
         text-align: justify;
         padding-right: 20px;
     }
 
     .text-content h2 {
         font-family: 'Playfair Display';
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bold;
 
     }
@@ -354,7 +359,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
+                    <div class="navbar-nav ml-auto" style="padding-left: 60px;">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>

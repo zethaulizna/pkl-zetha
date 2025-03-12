@@ -23,6 +23,13 @@
     <link href="css/style.min.css" rel="stylesheet">
 
     <style>
+        :root {
+            --white: #ffffff;
+            --primary: #F43B22;
+            --light-primary: #FFDEDA;
+            --light-primary2: #fff9f8;
+        }
+
         body {
             font-family: 'Poppins';
             background-color: #ffffff;
@@ -52,6 +59,11 @@
             display: flex;
             justify-content: center; 
             margin: 0;
+            font-size: 15px;
+        }
+
+        .dropdown-item {
+            font-size: 15px;
         }
 
         .navbar-nav .nav-item .nav-link-active {
@@ -69,16 +81,17 @@
             margin-left: 20px; 
         }
 
+
         .container-fluid img {
             display: block;
-            width: 100%;
-            height: auto; 
+            max-width: 1440px;
+            max-height: 388px; 
             
         }
 
         .text-container{
             position: absolute;
-            top: 40%;
+            top: 37%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -90,7 +103,7 @@
             font-family: 'Alegreya Sans';
             font-weight: bold !important;
             text-transform: uppercase;
-            font-size: 80px;
+            font-size: 75px;
             color: white;
             padding-bottom: 180px;
         }
@@ -118,7 +131,7 @@
         }
         
         .btn-login {
-            background-color: #F43B22;
+            background-color: var(--primary);
             color: #ffffff;
             border: 2px solid #FFFFFF;
             font-size: 14px;
@@ -126,8 +139,8 @@
 
         .btn-login:hover {
             background-color: white;
-            color: #F43B22;
-            border: 2px solid #F43B22;
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
         .btn-lang {
@@ -142,82 +155,6 @@
         .btn-lang img {
             width: 20px;
             height: 20px;
-        }
-
-        .btn-register {
-            background-color: #00928f;
-            color: white;
-            border: 2px solid #00928f;
-            cursor: pointer; 
-            z-index: 2; 
-            font-size: 16px;
-        }
-
-        .btn-register:hover {
-            background-color: white !important;
-            border: 2px solid white !important;
-            color: #00928f !important; 
-        }
-
-        .search-section-wrapper{
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 1;
-        }
-
-        .search-section {
-            background-color: #092E3C;
-            padding: 30px; 
-            border-radius: 23px;
-            text-align: center;
-            width: 1200px;
-            height: 150px; 
-            box-sizing: border-box;
-            margin-top: 350px;
-        }
-        
-        .search-section p {
-            font-size: 20px;
-            font-weight: 400;
-            color: white;
-            text-align: left;
-        }
-
-        .search-columns {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .search-columns input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 3px;
-            border: none;
-            background-color: #CADFD8;
-            font-size: 14px;
-            color: rgba(27, 27, 27, 0.6);
-        }
-        .search-columns input:focus{
-            background-color: #B7D1C9;
-        }
-
-        .search-btn {
-            background-color: #0092BF;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 18px;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .search-btn:hover {
-            background-color: #007b7a;
         }
 
         .service-section {
@@ -272,35 +209,12 @@
             white-space: nowrap; /* Pastikan button tidak membungkus teks */
         }
 
-        .btn-menu:hover {
-            background-color: #00928F; /* Warna lebih gelap untuk efek hover */
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .btn-show-all-discover {
-            background-color: #ffffff !important; 
-            color: #00928F !important;
-            border: 2px solid #00928F !important;
-            font-weight: 800 !important;
-            border-radius: 5px !important;
-
-        }
-        .btn-show-all-discover:hover {
-            background-color: #00928F !important;
-            color: #ffffff !important;
-        }
 
         .course-title {
             font-weight: bold !important;
             font-family: 'Maven Pro';
         }
 
-        .registration-date {
-            font-size: 14px;
-            color: #777795;
-            font-family: 'Maven Pro';
-        }
         .course-card img {
             max-width: 25%;
             border-radius: 8px;
@@ -326,20 +240,6 @@
             margin-bottom: 20px;
         }
         
-
-        .btn-show-all-news {
-            color: #00928F !important;
-            background-color: #E1E9EC !important;
-            border: 2px solid #00928F !important;
-            font-weight: 800 !important;
-            border-radius: 5px !important;
-        }
-
-        .btn-show-all-news:hover {
-            background-color: #00928F !important;
-            color: #ffffff !important;
-        }
-
         .description-section {
             display: flex;
             align-items: center;
@@ -358,50 +258,20 @@
 
         .description-section .content p {
             text-align: justify;
-            font-size: 20px;
+            font-size: 18px;
             color: #555;
             margin-bottom: 20px;
         }
         .description-section h5 {
-            font-size: 60px !important;
+            font-size: 50px !important;
             font-family: 'Poppins'!important;
             margin-top: 0 !important;
             font-weight: bold !important;
         }
 
 
-        .arrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 53px;
-            height: 53px;
-            border: 2px solid #00928F; /* Warna garis lingkaran */
-            border-radius: 50%; /* Membentuk lingkaran */
-            background-color: transparent; /* Warna dalam lingkaran transparan */
-            cursor: pointer;
-            padding: 0;
-        }
-
-        .arrow-span {
-            display: inline-block;
-            width: 21px;
-            height: 21px;
-            border-right: 2px solid #00928F; /* Garis panah vertikal */
-            border-top: 2px solid #00928F; /* Garis panah horizontal */
-            transform: rotate(45deg); /* Membuat simbol panah */
-        }
-
-        .arrow:hover {
-            background-color: #00928F; /* Warna latar belakang saat di-hover */
-        }
-
-        .arrow:hover span {
-            border-color: #fff; /* Mengubah warna panah saat di-hover */
-        }
-        
         .footer-section {
-            background-color: #ff4a3d;
+            background-color: var(--primary);
             color: #fff;
             padding: 20px 30px 20px 50px;
             display: flex;
@@ -454,18 +324,15 @@
 
         .product-section .content p {
             text-align: justify;
-            font-size: 20px;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
         }
         .product-section h5 {
-            font-size: 60px !important;
+            font-size: 50px !important;
             font-family: 'Poppins'!important;
             margin-top: 0 !important;
             font-weight: bold !important;
-        }
-        .product-section p {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 20px;
         }
 
         .product-section {
@@ -477,7 +344,7 @@
             font-weight: bold !important;
             font-family: 'Poppins' !important;
             font-size: 40px;
-            color: #ff4a3d;
+            color: var(--primary);
             text-align: center;
         }
 
@@ -485,7 +352,7 @@
             font-weight: bold !important;
             font-family: 'Poppins' !important;
             font-size: 30px;
-            color: #ff4a3d;
+            color: var(--primary);
         }
         
         .testimoni-section {
@@ -537,7 +404,7 @@
 
         .btn-desc {
             display: inline-block;
-            background-color: #ff4a3d;
+            background-color: var(--primary);
             color: #fff;
             padding: 10px 20px;
             border-radius: 7px;
@@ -550,32 +417,32 @@
 
         .btn-desc:hover {
             background-color: white;
-            color: #ff4a3d;
-            border-color: #ff4a3d;
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
         .btn-desc1 {
             display: inline-block;
             background-color: white;
-            color: #ff4a3d;
+            color: var(--primary);
             padding: 10px 20px;
             border-radius: 7px;
             cursor: pointer;
             font-size: 14px;
             text-transform: uppercase;
             font-weight: bold;
-            border: 2px solid #ff4a3d;
+            border: 2px solid var(--primary);
         }
 
         .btn-desc1:hover {
-            background-color: #ff4a3d;
+            background-color: var(--primary);
             color: white;
             border-color: white;
         }
 
         .btn-service {
             display: flex;
-            background-color: #ff4a3d;
+            background-color: var(--primary);
             color: #fff;
             padding: 10px 20px;
             border-radius: 7px;
@@ -589,17 +456,9 @@
 
         .btn-service:hover {
             background-color: white;
-            color: #ff4a3d;
-            border-color: #ff4a3d;
+            color: var(--primary);
+            border-color: var(--primary);
         }
-
-        @media (max-width: 768px) {
-            .search-section {
-                width: 100%;
-                padding: 20px;
-            }
-        }
-
     </style>
 </head>
 
@@ -612,7 +471,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
+                    <div class="navbar-nav ml-auto" style="padding-left: 60px;">
                         <a href="#" class="nav-item nav-link">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
@@ -735,7 +594,7 @@
         </section>
 
         <!-- testimoni Lab Insyde section -->    
-        <section class="testimoni-section" style="background-color: white;">
+        <section class="testimoni-section" style="background-color: var(--primary);">
             <h4>Testimoni</h4>
             <div class="lab-content" style="width: 90%; max-width: 2000px; margin-bottom: 40px;">
                 <div class="news-item d-flex">
