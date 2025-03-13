@@ -22,350 +22,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --white: #ffffff;
-            --primary: #F43B22;
-            --light-primary: #FFDEDA;
-            --light-primary2: #fff9f8;
-        }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/custom.css" rel="stylesheet">
 
-        body {
-            font-family: 'Poppins';
-            background-color: #ffffff;
-        }
-        
-        .container-fluid h1 {
-            font-size: 22px !important;
-            font-family: 'poppins' !important;
-            text-transform: normal !important;
-            color: white !important;
-            font-weight: bold!important;
-        }
-        
-        .navbar-nav .nav-item .nav-link {
-            font-weight: 100 !important;  
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            font-weight: 100 !important;  
-        }
-        
-        .navbar-nav {
-            display: flex;
-            justify-content: center; 
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .dropdown-item {
-            font-size: 15px;
-        }
-
-        .navbar-nav .nav-item .nav-link-active {
-            margin: 0 50px; 
-        }
-
-        .navbar-collapse {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            font-weight: 100 !important;
-        }
-
-        .btn-login {
-            margin-left: 20px; 
-        }
-
-        .container-fluid img {
-            display: block;
-            max-width: 1440px;
-            max-height: 388px; 
-            
-        }
-
-        .text-container{
-            position: absolute;
-            top: 37%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 2;
-        }
-
-        .text-container h3 {
-            font-family: 'Alegreya Sans';
-            font-weight: bold !important;
-            text-transform: uppercase;
-            font-size: 75px;
-            color: white;
-            padding-bottom: 180px;
-        }
-
-        .container-fluid h5 {
-            color: rgb(0, 0, 0); 
-            font-family: 'Alegreya Sans'; 
-        }
-
-        .container-fluid h3 {
-            margin-top: 200px; 
-        }
-
-        .container {
-            margin-top: 40px; 
-            margin-bottom: 50%;
-        }
-
-
-        .btn-login, .btn-register, .btn-lang {
-            border-radius: 7px;
-            padding: 8px 16px;
-            text-transform: normal;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .btn-login {
-            background-color: #F43B22;
-            color: #ffffff;
-            border: 2px solid #FFFFFF;
-            font-size: 14px;
-        }
-
-        .btn-login:hover {
-            background-color: white;
-            color: #F43B22;
-            border: 2px solid #F43B22;
-        }
-
-        .btn-lang {
-            background-color: transparent;
-            color: black;
-            width: 40px;
-            height: 40px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .btn-lang img {
-            width: 20px;
-            height: 20px;
-        }
-
-    main {
-        padding-top: 5rem;
-        padding-right: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 3rem;
-        margin-bottom: 5rem;
-    }
-
-    .content {
-        max-width: 1800px;
-        width: 100%;
-        display: flex;
-        gap: 5rem;
-        align-items: stretch; /* Menyamakn tinggi sidebar dengan konten kanan */
-    }
-
-    aside {
-        /*flex: 0.9;*/
-        display: flex;
-        flex-direction: column;
-        padding-top: 8px;
-    }
-    
-    .profile-menu {  
-        background: var(--white);
-
-        height: 100%;
-    }
-
-    .profile-menu h2 {
-        /*margin-bottom: 1rem;*/
-        font-family: 'Poppins';
-        font-size: 22px;
-        padding-left: 40px;
-        font-weight: 500;
-        /*padding-bottom: 10px;*/
-    }
-
-    .profile-menu ul {
-        list-style: none;
-        position: relative;
-        right: 10px;
-    }
-
-    .profile-menu ul li {
-        padding: 8px;
-        border-bottom: 2px solid var(--light-primary); /* Pembatas antara item di sidebar */
-    }
-
-    .profile-menu ul li:last-child {
-        border-bottom: none;
-    }
-
-    .profile-menu ul li a {
-        text-decoration: none;
-        font-size: 14px;
-        font-family: 'Poppins';
-        color: #333;
-        padding: 0.15rem;
-        padding-right: 5rem;
-        display: block;
-        border-radius: 4px;
-        transition: background 0.3s;
-    }
-
-    .profile-menu ul li.active {
-        background-color: var(--light-primary2);
-    }
-
-    .profile-menu ul li.active a {
-        color: var(--primary);
-    }
-
-    .profile-menu ul li:hover {
-        background: var(--light-primary);
-        
-    }
-
-    .about-content {
-        flex: 5;
-        display: flex;
-        align-items: stretch; /* Menyamakn tinggi konten kanan dengan sidebar */
-        gap: 2rem;
-        height: 100%;
-        margin-left: 2rem;
-    }
-
-    .text-content {
-        flex: 0.7;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Menyebarkan konten teks untuk tinggi penuh */
-        font-size: 20px;
-        text-align: justify;
-        padding-right: 25px;
-    }
-
-    .text-content h2 {
-        font-family: 'Playfair Display';
-        font-size: 40px;
-        font-weight: bold;
-    }
-
-    .text-content p {
-        margin-bottom: 3rem;
-        line-height: 1.6;
-        padding-left: 3px;
-    }
-
-    .image-container {
-        max-width: 426px;
-        max-height: 100%;
-        overflow: hidden;
-        border-radius: 70px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-self: flex-start; /* Gambar berada di atas */
-    }
-
-    .image-container img {
-        width: 426px;
-        height: 277px;
-        display: block;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-
-        
-    .footer-section {
-            background-color: #ff4a3d;
-            color: #fff;
-            padding: 20px 30px 20px 50px;
-            display: flex;
-        }
-        .footer-left {
-            flex: 0 0 73%;
-            padding: 10px 10px 0 20px;
-        }
-        
-        .footer-right {
-            flex: 1;
-            padding: 10px 10px 0 20px;
-        }
-
-        .footer-line {
-            border-top: 1px solid #F9F9F9;
-            width: 135%;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .footer-social-icons a {
-            color: #fff;
-            max-width: 20px;
-            text-decoration: none;
-        }
-        
-        .footer-social-icons a:hover {
-            color: #b0bec5;
-        }
-
-.lab-section {
-    background-color: #f9f9f9;
-    padding: 40px 0;
-}
-
-
-.description-section {
-    padding: 20px 0;
-    margin-top: 20px;
-    color: #333;
-}
-
-
-.description-section h4 {
-            font-weight: bold !important;
-            font-family: 'Poppins' !important;
-            font-size: 40px;
-            color: #ff4a3d;
-            margin-left: 885px;
-        }
-
-        .description-section h6 {
-            font-weight: bold !important;
-            font-family: 'Poppins' !important;
-            font-size: 35px;
-            color: #ff4a3d;
-        }
-
-
-        .product-section {
-    padding: 20px 0;
-    margin-top: 20px;
-    color: #333;
-        }
-
-
-        @media (max-width: 768px) {
-            .search-section {
-                width: 100%;
-                padding: 20px;
-            }
-        }
-
-    </style>
 </head>
 
 <body>
@@ -425,7 +84,7 @@
             </div>
 
             <main>
-                <div class="content">
+                <div class="content-section">
                     <aside>
                         <div class="profile-menu">
                             <h2>Profile</h2>
@@ -437,20 +96,180 @@
                             </ul>
                         </div>
                     </aside>
-                    <section class="about-content">
-                        <div class="text-content">
-                            <h2>Lorem Ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
+
+
+                <!-- pimpinan content-->
+                <div class="col-lg-8">
+                    <div class="box-list">
+
+                        <!-- profile 1-->
+                        <div class="item-profile">
+                            <div class="info-profile">
+                                <div class="img-profile">
+                                    <div class="thumb-img">
+                                        <img src="img/profile.jpg" alt="Profile Image">
+                                    </div>
+                                </div>
+                                <div class="title-profile">
+                                    <h5 class="name">Lorem Ipsum</h5>
+                                    <div class="position">Lorem Ipsum</div>
+                                </div>
+                            </div>
+                            <div class="desc-profile">
+                                <article>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <div class="contact-profile">
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-user"></i></span>
+                                            <span class="text">NIP. 19681126 199403 2 001</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                                            <span class="text">dekan.fasilkom@upnjatim.ac.id</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                        <div class="image-container">
-                            <img src="img/fasilkom1.png" alt="Campus">
+                                
+                        <!-- profile 2-->
+                        <div class="item-profile">
+                            <div class="info-profile">
+                                <div class="img-profile">
+                                    <div class="thumb-img">
+                                        <img src="img/profile.jpg" alt="Profile Image">
+                                    </div>
+                                </div>
+                                <div class="title-profile">
+                                    <h5 class="name">Lorem Ipsum</h5>
+                                    <div class="position">Lorem Ipsum</div>
+                                </div>
+                            </div>
+                            <div class="desc-profile">
+                                <article>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <div class="contact-profile">
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-user"></i></span>
+                                            <span class="text">NIP. 19681126 199403 2 001</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                                            <span class="text">dekan.fasilkom@upnjatim.ac.id</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                    </section>
+                                
+                        <!-- profile 3-->
+                        <div class="item-profile">
+                            <div class="info-profile">
+                                <div class="img-profile">
+                                    <div class="thumb-img">
+                                        <img src="img/profile.jpg" alt="Profile Image">
+                                    </div>
+                                </div>
+                                <div class="title-profile">
+                                    <h5 class="name">Lorem Ipsum</h5>
+                                    <div class="position">Lorem Ipsum</div>
+                                </div>
+                            </div>
+                            <div class="desc-profile">
+                                <article>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <div class="contact-profile">
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-user"></i></span>
+                                            <span class="text">NIP. 19681126 199403 2 001</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                                            <span class="text">dekan.fasilkom@upnjatim.ac.id</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- profile 4-->
+                        <div class="item-profile">
+                            <div class="info-profile">
+                                <div class="img-profile">
+                                    <div class="thumb-img">
+                                        <img src="img/profile.jpg" alt="Profile Image">
+                                    </div>
+                                </div>
+                                <div class="title-profile">
+                                    <h5 class="name">Lorem Ipsum</h5>
+                                    <div class="position">Lorem Ipsum</div>
+                                </div>
+                            </div>
+                            <div class="desc-profile">
+                                <article>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                                    </p>
+                                    <div class="contact-profile">
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-user"></i></span>
+                                            <span class="text">NIP. 19681126 199403 2 001</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                                            <span class="text">dekan.fasilkom@upnjatim.ac.id</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </main>
+            </div>
+        </main>
         
   
     <!-- Footer Section -->
