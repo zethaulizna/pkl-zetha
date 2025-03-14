@@ -1,36 +1,112 @@
 
 :root {
     --white: #ffffff;
+    --black: #000000;
+    --grey-white: #ccc;
     --primary: #F43B22;
     --light-primary: #FFDEDA;
     --light-primary2: #fff9f8;
+    --text-primary: #333;
+    --text-secondary: #777;
+    --text-third: #999;
+    --text-muted: #919191;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 body {
     font-family: 'Poppins';
-    background-color: #ffffff;
+    background-color: var(--white);
+    opacity: 0;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-}
-.container-fluid h1 {
-    font-size: 22px !important;
-    font-family: 'poppins' !important;
-    text-transform: normal !important;
-    color: white !important;
-    font-weight: bold!important;
+body.loaded {
+    opacity: 1;
 }
 
+/* navbar */
+/* transisi warna button */
+.btn-login {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out, 
+                color 0.2s ease-in-out, 
+                border 0.2s ease-in-out;
+}
 
-/* index.html */
+.btn-login:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+/* Saat navbar berubah warna */
+.navbar.scrolled .btn-login {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--white); /* Border putih tetap ada */
+}
+
+.navbar.scrolled .btn-login:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.7); /* Border abu terang saat transparan */
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #F43B22;
+    z-index: -1;
+    transition: height 0.2s ease-in-out;
+}
+
+.navbar.scrolled {
+    border-bottom: 1px solid #F43B22; /* Border berubah mengikuti warna navbar */
+}
+
+.navbar.scrolled::after {
+    height: 100%;
+}
+
+/* Button mengikuti warna navbar */
+.navbar .nav-button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navbar.scrolled .nav-button {
+    background: white;
+    color: #F43B22;
+    border: 1px solid white;
+}
+
 .navbar-nav .nav-item .nav-link {
     font-weight: 100 !important;  
 }
 
 .navbar-dark .navbar-nav .nav-link {
     font-weight: 100 !important;  
+    color: var(--white) !important;
 }
 
 .navbar-nav {
@@ -40,8 +116,107 @@ body {
     font-size: 15px;
 }
 
+.navbar-nav .nav-link {
+    position: relative;
+    color: white; /* Sesuaikan warna teks */
+    transition: color 0.2s ease-in-out;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link.active {
+    color: var(--white) !important; 
+}
+
+
+/* Underline efek saat hover pakai ::before, bukan ::after */
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white; /* Warna underline */
+    transition: width 0.2s ease-in-out;
+    transform: none;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+}
+
+/* Pastikan tanda dropdown tetap ada */
+.dropdown-toggle::after {
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
 .dropdown-item {
     font-size: 15px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .5rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.dropdown-item:hover, 
+.dropdown-item:focus {
+    background-color: var(--light-primary2); /* Warna abu-abu terang seperti di referensi */
+    color: var(--primary); /* Warna biru teks sesuai referensi */
+}
+
+/* Biar dropdown lebih rapi */
+.dropdown-menu {
+    border-radius: 4px; /* Bikin sedikit rounded */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Tambah sedikit shadow */
+    overflow: hidden; /* Biar efek hover smooth */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: block; /* Tetap block tapi di-hidden */
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    transform: translateY(10px); /* Geser ke bawah dulu */
+    visibility: hidden;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out, visibility 0.15s;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .navbar-nav .nav-item .nav-link-active {
@@ -60,6 +235,20 @@ body {
 }
 
 
+/* index.html */
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+.container-fluid h1 {
+    font-size: 22px !important;
+    font-family: 'poppins' !important;
+    text-transform: normal !important;
+    color: var(--white) !important;
+    font-weight: bold!important;
+}
+
 .container-fluid img {
     display: block;
     max-width: 1440px;
@@ -73,7 +262,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: var(--white);
     z-index: 2;
 }
 
@@ -82,7 +271,7 @@ body {
     font-weight: bold !important;
     text-transform: uppercase;
     font-size: 75px;
-    color: white;
+    color: var(--white);
     padding-bottom: 180px;
 }
 
@@ -108,22 +297,9 @@ body {
     align-items: center;
 }
 
-.btn-login {
-    background-color: var(--primary);
-    color: #ffffff;
-    border: 2px solid #FFFFFF;
-    font-size: 14px;
-}
-
-.btn-login:hover {
-    background-color: white;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
 .btn-lang {
     background-color: transparent;
-    color: black;
+    color: var(--black);
     width: 40px;
     height: 40px;
     justify-content: center;
@@ -143,7 +319,7 @@ body {
     font-weight: bold !important;
     font-family: 'Poppins' !important;
     font-size: 40px;
-    color: white;
+    color: var(--white);
     text-align: center;
     padding-bottom: 30px;
 }
@@ -152,15 +328,8 @@ body {
     font-weight: bold !important;
     font-family: 'Poppins' !important;
     font-size: 40px;
-    color: black;
+    color: var(--black);
     text-align: center;
-}
-
-.service-section h1 {
-    font-weight: bold !important;
-    font-family: 'Poppins' !important;
-    font-size: 40px;
-    color: #090D2C;
 }
 
 .button-wrapper {
@@ -171,22 +340,9 @@ body {
     scrollbar-width: none; 
     white-space: nowrap; 
     width: 100%; 
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid var(--grey-white); 
     padding-bottom: 30px;
 }
-
-.btn-menu {
-    background-color: #ffffff;
-    font-family: 'Poppins';
-    color: #000;
-    border-radius: 100px;
-    border: 1px solid #230F0F;
-    margin-right: 10px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-    white-space: nowrap; /* Pastikan button tidak membungkus teks */
-}
-
 
 .course-title {
     font-weight: bold !important;
@@ -205,7 +361,7 @@ body {
 }
 .course-card p {
     font-size: 15px;
-    color: #555;
+    color: var(--text-primary);
     text-align: center;
 }
 
@@ -214,7 +370,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 16px;
-    background-color: #fff; /* Pastikan background card tetap putih agar garis border terlihat jelas */
+    background-color: var(--white); /* Pastikan background card tetap putih agar garis border terlihat jelas */
     margin-bottom: 20px;
 }
 
@@ -223,13 +379,35 @@ body {
     align-items: center;
     padding: 10px 0 20px;
     margin: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .description-section img {
     max-width: 40%;
     border-radius: 8px;
     margin-right: 40px;
     flex: 1;
+    transition: transform 0.3s ease-in-out;
 }
+
+/* Efek hover gambar */
+.description-section img:hover {
+    transform: scale(1.02);
+}
+
 .description-section .content {
     flex: 2;
 }
@@ -237,14 +415,50 @@ body {
 .description-section .content p {
     text-align: justify;
     font-size: 18px;
-    color: #555;
+    color: var(--text-primary);
     margin-bottom: 20px;
 }
+
 .description-section h5 {
     font-size: 50px !important;
-    font-family: 'Poppins'!important;
+    font-family: 'Poppins' !important;
     margin-top: 0 !important;
     font-weight: bold !important;
+}
+
+.lab-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 10%;
+    margin: 0 auto;
+}
+
+.lab-image {
+    border-radius: 10px;
+    width: 30%;
+}
+
+.btn-desc {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efek hover pada tombol */
+.btn-desc:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: scale(1.00);
 }
 
 .lab-section {
@@ -266,7 +480,7 @@ body {
 .product-section .content p {
     text-align: justify;
     font-size: 18px;
-    color: #555;
+    color: var(--text-primary);
     margin-bottom: 20px;
 }
 .product-section h5 {
@@ -296,41 +510,6 @@ body {
     color: var(--primary);
 }
 
-.testimoni-section {
-    padding: 20px 0;
-    margin-top: 20px;
-    color: #333;
-}
-
-
-.testimoni-section h4 {
-    font-weight: bold !important;
-    font-family: 'Poppins' !important;
-    font-size: 40px;
-    color: white;
-    text-align: center;
-}
-
-.testimoni-section h6 {
-    font-weight: bold !important;
-    font-family: 'Poppins' !important;
-    font-size: 35px;
-    color: white;
-}
-
-
-.lab-content {
-    display: flex;
-    align-items: center ;
-    gap: 40px;
-    width: 10%;
-    margin: 0 auto;
-}
-
-.lab-image {
-    border-radius: 10px;
-    width: 30%;
-}   
 
 .lab-info h1 {
     font-size: 28px !important;
@@ -343,28 +522,10 @@ body {
     margin-bottom: 20px;
 }
 
-.btn-desc {
-    display: inline-block;
-    background-color: var(--primary);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 2px solid #FFFFFF;
-}
-
-.btn-desc:hover {
-    background-color: white;
-    color: var(--primary);
-    border-color: var(--primary);
-}
 
 .btn-desc1 {
     display: inline-block;
-    background-color: white;
+    background-color: var(--white);
     color: var(--primary);
     padding: 10px 20px;
     border-radius: 7px;
@@ -373,18 +534,20 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     border: 2px solid var(--primary);
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-desc1:hover {
     background-color: var(--primary);
-    color: white;
-    border-color: white;
+    color: var(--white);
+    border-color: var(--white);
+    transform: scale(1.00);
 }
 
 .btn-service {
     display: flex;
     background-color: var(--primary);
-    color: #fff;
+    color: var(--white);
     padding: 10px 20px;
     border-radius: 7px;
     cursor: pointer;
@@ -392,14 +555,17 @@ body {
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    border: 2px solid #FFFFFF;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-service:hover {
-    background-color: white;
+    background-color: var(--white);
     color: var(--primary);
     border-color: var(--primary);
+    transform: scale(1.00);
 }
+
 
 /* aboutus.html */
 main {
@@ -409,7 +575,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .content-section {
@@ -417,14 +583,20 @@ main {
     width: 100%;
     display: flex;
     gap: 3rem;
-    align-items: stretch; /* Menyamakn tinggi sidebar dengan konten kanan */
+   /* align-items: stretch;  Menyamakn tinggi sidebar dengan konten kanan */
+   align-items: flex-start; /* Supaya sidebar tetap di atas */
 }
 
+.content-section aside{
+    position: sticky;
+    top: 130px; /* Sesuaikan dengan tinggi navbar */
+    height: fit-content;
+    align-self: flex-start; /* Mencegah sidebar mengikuti tinggi konten utama */
+
+}
 aside {
-    /*flex: 0.9;*/
     display: flex;
     flex-direction: column;
-    padding-top: 8px;
 }
 
 .profile-menu {  
@@ -461,7 +633,7 @@ aside {
     text-decoration: none;
     font-size: 14px;
     font-family: 'Poppins';
-    color: #333;
+    color: var(--text-primary);
     padding: 0.15rem;
     padding-right: 5rem;
     display: block;
@@ -595,7 +767,7 @@ aside {
     display: flex;
     align-items: center;
     font-size: 16px;
-    color: #333;
+    color: var(--text-primary);
     margin-bottom: 5px;
     padding-top: 5px;
 }
@@ -610,11 +782,65 @@ aside {
     font-weight: 500;
     font-size: 16px;
 }
+/* visi misi */
+.about-content ol {
+    counter-reset: li;
+    }
+
+    .about-content ol>li {
+    position: relative;
+    padding-left: 20px;
+    display: flow-root;
+    counter-increment: li;
+    margin-bottom: 15px;
+    }
+
+    .about-content ol>li:before {
+    content: counter(li);
+    color: var(--black);
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 2px;
+    position: absolute;
+    background-color: transparent;
+    text-align: center;
+    min-width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    padding:2px 1px 0 0;
+    border: 2px solid var(--primary);
+    margin-left: -20px;
+    }
+
+    .tc-visi {
+        flex: 0.9; /*lebar text*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Menyebarkan konten teks untuk tinggi penuh */
+        font-size: 16px;
+        text-align: justify;
+        padding-right: 20px;
+    }
+
+    .tc-visi h2 {
+        font-family: 'Playfair Display';
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .tc-visi p {
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        padding-left: 3px;
+    }
 
 /* footer */
 .footer-section {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--white);
     padding: 20px 30px 20px 50px;
     display: flex;
 }
@@ -639,7 +865,7 @@ aside {
 }
 
 .footer-social-icons a {
-    color: #fff;
+    color: var(--white);
     max-width: 20px;
     text-decoration: none;
 }

@@ -68,3 +68,23 @@
     
 })(jQuery);
 
+// smooth transisi
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
+});
+
+// animasi navbar
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    const btnLogin = document.querySelector(".btn-login");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+            btnLogin.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+            btnLogin.classList.remove("scrolled");
+        }
+    });
+});
