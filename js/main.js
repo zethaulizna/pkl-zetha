@@ -88,3 +88,53 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+/* JavaScript File: script.js */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".fade-in");
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight * 0.85;
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            if (cardTop < triggerBottom) {
+                card.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+
+/* service button slide */
+function slideLeft() {
+    document.querySelector('.row').scrollBy({ left: -300, behavior: 'smooth' });
+}
+
+function slideRight() {
+    document.querySelector('.row').scrollBy({ left: 300, behavior: 'smooth' });
+}
+
+/* translate */
+document.addEventListener("DOMContentLoaded", function () {
+    const langButtons = document.querySelectorAll(".btn-lang");
+    
+    langButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const lang = this.querySelector("img").alt === "Bahasa Indonesia" ? "id" : "en";
+            
+            fetch("translate.php?lang=" + lang)
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelectorAll("[data-translate]").forEach(el => {
+                        const key = el.getAttribute("data-translate");
+                        if (data[key]) {
+                            el.innerHTML = data[key];
+                        }
+                    });
+                })
+                .catch(error => console.error("Error fetching translation:", error));
+        });
+    });
+});

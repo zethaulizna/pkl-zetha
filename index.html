@@ -40,25 +40,26 @@
                     <div class="navbar-nav ml-auto" style="padding-left: 60px;">
                         <a href="#" class="nav-item nav-link">Home</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profil</a>
                             <div class="dropdown-menu">
-                                <a href="aboutus.html" class="dropdown-item">About us</a>
+                                <a href="aboutus.html" class="dropdown-item">Tentang Kami</a>
                                 <a href="pimpinan.html" class="dropdown-item">Pimpinan Fakultas</a>
-                                <a href="visimisi.html" class="dropdown-item">Visi Misi</a>
+                                <a href="visimisi.html" class="dropdown-item">Visi & Misi</a>
                                 <a href="manajemen.html" class="dropdown-item">Manajemen</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Service</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Layanan</a>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Sertifikasi</a>
-                                <a href="#" class="dropdown-item">Konsultasi</a>
-                                <a href="#" class="dropdown-item">Training</a>
+                                <a href="#" class="dropdown-item">Konsultasi IT</a>
+                                <a href="#" class="dropdown-item">Sertifikasi BNSP</a>
+                                <a href="#" class="dropdown-item">Sewa LAB</a>
+                                <a href="#" class="dropdown-item">Pelatihan</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Product</a>
-                        <a href="#" class="nav-item nav-link">News</a>
-                        <a href="#" class="nav-item nav-link contact">Contact</a>
+                        <a href="#" class="nav-item nav-link">Produk</a>
+                        <a href="#" class="nav-item nav-link">Berita</a>
+                        <a href="#" class="nav-item nav-link contact">Kontak</a>
                     </div>
                     <!-- Language Buttons -->
                     <div class="ml-auto d-flex align-items-center">
@@ -78,8 +79,6 @@
 
         <div class="container-fluid p-0">
             <img class="w-100" src="img/fasilkom.png" alt="Image">
-        
-            <!-- Container for Lorem Ipsum and Register Button -->
             <div class="text-container pb-4">
                 <h3>LAB INSYDE</h3>
             </div>
@@ -101,10 +100,12 @@
     <!-- Service Section -->
     <section class="service-section" style="background-color: #F43B22;">
         <div class="container">
-            <h4>Service</h4>
-            <div class="row";>
+            <h4>Layanan</h4>
+            <div class="slider-wrapper">
+            <button class="slide-btn left" onclick="slideLeft()">❮</button>
+            <div class="row no-gutters";>
                 <!-- Course Card 1 -->
-                <div class="col-md-4 mb-4">
+                <div class="course-card-wrapper">
                     <div class="course-card">
                         <img src="img/discussion.png" alt="Course Image">
                         <h5 class="course-title">Konsultasi IT</h5>
@@ -113,7 +114,7 @@
                     </div>
                 </div>
                 <!-- Course Card 2 -->
-                <div class="col-md-4 mb-4">
+                <div class="course-card-wrapper">
                     <div class="course-card">
                         <img src="img/sertificate.png" alt="Course Image">
                         <h5 class="course-title">Sertifikasi BNSP</h5>
@@ -122,7 +123,7 @@
                     </div>
                 </div>
                 <!-- Course Card 3 -->
-                <div class="col-md-4 mb-4">
+                <div class="course-card-wrapper">
                     <div class="course-card">
                         <img src="img/rent.png" alt="Course Image">
                         <h5 class="course-title">Sewa LAB</h5>
@@ -131,21 +132,32 @@
                     </div>
                 </div>
                 <!-- Course Card 4 -->
-                <div class="col-md-4 mb-4">
+                <div class="course-card-wrapper">
                     <div class="course-card">
-                        <img src="img/sertificate.png" alt="Course Image">
+                        <img src="img/monitor.png" alt="Course Image">
+                        <h5 class="course-title">Pelatihan</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor a sapien cursus, nec euismod eros facilisis.</p>
+                        <a href="#" class="btn btn-service"s>More</a>
+                    </div>
+                </div>
+                <!-- Course Card 5 -->
+                <div class="course-card-wrapper">
+                    <div class="course-card">
+                        <img src="img/monitor.png" alt="Course Image">
                         <h5 class="course-title">Pelatihan</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis dolor a sapien cursus, nec euismod eros facilisis.</p>
                         <a href="#" class="btn btn-service"s>More</a>
                     </div>
                 </div>
             </div>
+            <button class="slide-btn right" onclick="slideRight()">❯</button>
+            </div>
         </div>
     </section>
 
         <!--product Lab Insyde section -->    
         <section class="product-section">
-            <h4>Product</h4>
+            <h4>Produk</h4>
             <div class="lab-content" style="width: 90%; max-width: 2000px;">
                 <div class="product-section d-flex">
                     <img src="img/robot.png" alt="Product Image" class="lab-image">
